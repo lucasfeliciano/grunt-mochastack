@@ -1,0 +1,35 @@
+{
+  "name": "grunt-mochastack",
+  "version": "0.1.0",
+  "description": "Grunt plugin to run concurrent mocha tests in browserstack",
+  "main": "grunt-mochastack.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucasfeliciano/grunt-mochastack.git"
+  },
+  "keywords": [
+    "mocha",
+    "test",
+    "browserstack",
+    "runner",
+    "launcher",
+    "selenium",
+    "concurrent",
+    "mochacli"
+  ],
+  "author": "Lucas Feliciano <mail@lucasfeliciano.com> (http://lucasfeliciano.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucasfeliciano/grunt-mochastack/issues"
+  },
+  "homepage": "https://github.com/lucasfeliciano/grunt-mochastack",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-config-dir": "^0.3.2",
+    "grunt-mocha-cli": "^1.10.0"
+  }
+}
