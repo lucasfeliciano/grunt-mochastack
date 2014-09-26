@@ -1,17 +1,27 @@
 'use strict';
 
+var browsersConfig = require('../config.js');
+var _              = require('lodash');
+var browsers       = [];
+var mochacliTasks  = [];
+
+browsers = _.reject(_.keys(browsersConfig), 'local');
+
+mochacliTasks = _.map(browsers, function(browser){
+    return 'mochacli:' + browser;
+});
 
 module.exports = function concurrent(grunt) {
-    // Load task
-    grunt.loadNpmTasks('grunt-concurrent');
+  // Load task
+  grunt.loadNpmTasks('grunt-concurrent');
 
-    // Options
-    return {
-        remoteTest: {
-            tasks: ['mochacli:ie', 'mochacli:firefox'],
-            options: {
-                logConcurrentOutput: true
-            }
-        }
+  // Options
+  return {
+    remoteTest: {
+      tasks: mochacliTasks,
+      options: {
+        logConcurrentOutput: true
+      }
     }
+  }
 };
