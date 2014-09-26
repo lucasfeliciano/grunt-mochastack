@@ -5,12 +5,13 @@ var _              = require('lodash');
 var browsers       = [];
 var mochacliTasks  = [];
 
-browsers = _.reject(_.keys(browsersConfig), 'local');
+browsers = _.without(_.keys(browsersConfig), 'local');
 
 mochacliTasks = _.map(browsers, function(browser){
+
     return 'mochacli:' + browser;
 });
-
+console.log(mochacliTasks);
 module.exports = function concurrent(grunt) {
   // Load task
   grunt.loadNpmTasks('grunt-concurrent');

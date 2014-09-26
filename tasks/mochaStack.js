@@ -1,6 +1,11 @@
 'use strict'
 
-var browserStackConfig = require('./config.js');
+var browserStackConfig = require('../config.js');
 
-// Aqui implementaremos a task usando os outros dois modulos
-//grunt.registerTask()
+
+module.exports = function mochastack(grunt) {
+  
+  // Load task
+  grunt.registerTask('mochastack', ['concurrent:remoteTest'])
+
+};

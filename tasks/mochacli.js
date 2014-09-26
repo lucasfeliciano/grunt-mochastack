@@ -15,10 +15,9 @@ var mochaOption    = {
   }
 };
 
-targets = _.map(targetNames, function(name){
-  var output = {}
+ _.forEach(targetNames, function(name){
 
-  output[name] = {
+  targets[name] = {
     src: ['test/interface/*.js'],
     options: {
       env: {
@@ -27,8 +26,10 @@ targets = _.map(targetNames, function(name){
     }
   }
 
-  return output;
 });
+
+mochaOptions = _.merge(mochaOption, targets);
+
 
 module.exports = function mochacli(grunt) {
   // Load task
