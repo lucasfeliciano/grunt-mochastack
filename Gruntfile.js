@@ -6,7 +6,5 @@ module.exports = function (grunt) {
     require('grunt-config-dir')(grunt, {
         configDir: require('path').resolve('tasks')
     });
-
-    // Register group tasks (The task to be exposed)
-
+    
 };
